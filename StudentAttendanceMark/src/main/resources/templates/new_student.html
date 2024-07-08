@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new student</title>
+    <link rel="stylesheet" th:href="@{/css/NewStudent.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+</head>
+<body  >
+<div class="container mt-5">
+<h1>
+    Add New Student
+</h1>
+<form th:action="@{/saveStudent}"
+th:object="${student}"
+method="post" >
+    <div class="form-group">
+    <label for="name">Name:</label>
+        <input type="text" th:field="*{name}" class="form-control" id="name" required/>
+    </div>
+    <div class="form-group">
+    <label for="rollNumber">Roll Number</label>
+    <input type="text" th:field="*{rollNumber}" class="form-control" id="rollNumber" required/>
+    </div>
+    <div class="form-group form-check">
+
+    <input type="checkbox" th:field="*{present}" class="form-check-input" id="present"/>
+        <label for="present" class="form-check-lable">Present</label>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">Save</button>
+
+</form>
+<div class="text-center mt3">
+<a href="/" class="btn btn-secondary">Back</a>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentAttendanceMark</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+</head>
+<body >
+<center>
+<h1>Student Attendance</h1>
+
+    <table border="5">
+        <tr>
+
+            <th>ID</th>
+            <th>Name</th>
+            <th>Roll Number</th>
+            <th>Present</th>
+            <th>Date</th>
+            <th>Actions</th>
+
+        </tr>
+
+        <tr th:each="student:${listStudents}">
+            <td th:text="${student.id}">ID</td>
+            <td th:text="${student.name}">Name</td>
+            <td th:text="${student.rollNumber}">Roll Number</td>
+            <td th:text="${student.present}">Present</td>
+            <td th:field="${#temporals.format(student.date,'yyyy-MM-dd')}">Date</td>
+            <td><a th:href="@{/updateForm/{id}(id=${student.id})}" class="btn btn-primary btn-sm"><i class="bi bi-pen"></i>Edit</a>
+            <a th:href="@{deleteStudent/{id}(id=${student.id})}" class=" btn btn-danger btn-sm"><i class="bi bi-trash"></i>Delete</a></td>
+        </tr>
+
+    </table>
+<a href="/newStudentForm"  class="btn btn-success">Add New Student</a>
+</center>
+</body>
+</html>

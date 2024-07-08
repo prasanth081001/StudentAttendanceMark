@@ -1,0 +1,27 @@
+table{
+
+width:100%;
+border-collapse:collapse;
+margin:20px auto;
+border:none;
+background-color:white;
+}
+th,td{
+border:none;
+padding:8px;
+text-align:left;
+}
+a:hover{
+text_decoration:underline;
+}
+button{
+color:blue;
+}
+h1{
+color:red;
+}
+body{
+
+background-image:url('https://www.smartschoolerp.com/wp-content/uploads/2022/12/attendance-management.jpg');
+background-size:cover;
+}
